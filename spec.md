@@ -144,7 +144,7 @@ The website MUST show:
 - Privacy policy (anchor link, https://hologram.zone/#privacy)
 - A footer with copyright, etc
 
-![noservice](https://github.com/2060-io/hologram.zone-specs/blob/gh-pages/noservice.png)
+![noservice](docs/assets/noservice.png)
 
 ### User arrives with a DTS invitation in URL
 
@@ -160,7 +160,7 @@ The website MUST show:
 - Privacy policy (anchor link, https://hologram.zone/#privacy)
 - A footer with copyright, etc
 
-![withservice](https://github.com/2060-io/hologram.zone-specs/blob/gh-pages/withservice.png)
+![withservice](docs/assets/withservice.png)
 
 ### Rendering of the invitation for connecting to service
 
