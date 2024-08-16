@@ -2,7 +2,7 @@
 
 **Specification Status:** [Pre-Draft](https://github.com/decentralized-identity/org/blob/master/work-item-lifecycle.md)
 
-**Latest Draft:** [2060-io/hologram.zone-website](https://github.com/hologram.zone-website)
+**Latest Draft:** [2060-io.github.io/hologram.zone-specs/](https://2060-io.github.io/hologram.zone-specs/)
 
 **Editors:**
 
