@@ -25,7 +25,8 @@ jobs:
   # Single deploy job since we're just deploying
   deploy:
     permissions:
-      contents: write
+      contents: read
+      pages: write
       id-token: write
     environment:
       name: github-pages
