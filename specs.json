@@ -3,13 +3,13 @@
       
       {
         "title": "Hologram.zone website v1.0",
-        "spec_directory": "./",
+        "spec_directory": "./specs",
         "logo": "https://2060.io/images/header/logo-2060.svg",
         "logo_link": "https://2060.io",
         "source": {
           "host": "github",
           "account": "2060-io",
-          "repo": "hologram.zone-website"
+          "repo": "hologram.zone-specs"
         }
       }
     ]

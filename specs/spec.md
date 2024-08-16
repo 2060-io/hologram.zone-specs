@@ -1,4 +1,4 @@
-# Hologram.zone website v1.0
+# Hologram.zone specs v1.0
 
 **Specification Status:** [Pre-Draft](https://github.com/decentralized-identity/org/blob/master/work-item-lifecycle.md)
 
