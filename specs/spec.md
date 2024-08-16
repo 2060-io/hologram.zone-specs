@@ -12,11 +12,11 @@
 
 **Participate:**
 
-~ [GitHub repo](https://github.com/hologram.zone-website)
+~ [GitHub repo](https://github.com/2060-io/hologram.zone-specs)
 
-~ [File a bug](https://github.com/hologram.zone-website/issues)
+~ [File a bug](https://github.com/2060-io/hologram.zone-specs/issues)
 
-~ [Commit history](https://github.com/hologram.zone-website/commits/main)
+~ [Commit history](https://github.com/2060-io/hologram.zone-specs/commits/main)
 
 ---
 
