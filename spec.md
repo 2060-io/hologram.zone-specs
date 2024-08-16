@@ -51,12 +51,14 @@ The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD, and 
 
 ## Logic
 
+*This section is non-normative.*
+
 Look at these 2 use cases:
 
-- User clicks an hologram link (DTS) from his mobile phone.
-- User scans an hologram link (DTS) from his mobile phone.
+- User *clicks* an hologram link (DTS) from his mobile phone.
+- User scans a QR representing an hologram link (DTS) from his mobile phone.
 
- In both case we are talking about the same URL. This URL MUST always be formatted as follows:
+ In both case we are talking about the same URL. This URL is always be formatted as follows:
 
 ```
 https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
@@ -129,10 +131,9 @@ holo --> dts: connect
 ## Pages
 
 The website MUST be a single-page website.
+We have 4 notable cases.
 
-Website MUST show, in this order:
-
-### User arrive spontaneously in website (no DTS invitation in URL)
+### Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone
 
 User was directed to https://hologram.zone/.
 
@@ -144,9 +145,23 @@ The website MUST show:
 - Privacy policy (anchor link, https://hologram.zone/#privacy)
 - A footer with copyright, etc
 
-![noservice](./noservice.png)
+![mobilenoservice](./mobilenoservice.png)
 
-### User arrives with a DTS invitation in URL
+### Case #2: when user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet
+
+User was directed to https://hologram.zone/.
+
+The website MUST show:
+
+- A **short** explanation of what is Hologram
+- A QR code of this URL, with a text "Continue on your Mobile Phone"
+- Terms and conditions (anchor link, https://hologram.zone/#terms)
+- Privacy policy (anchor link, https://hologram.zone/#privacy)
+- A footer with copyright, etc
+
+![desktopnoservice](./desktopnoservice.png)
+
+### Case #3: User arrives with a DTS invitation in URL, from a mobile phone
 
 User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 
@@ -154,13 +169,27 @@ User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 The website MUST show:
 
 - A **short** explanation of what is Hologram
-- Instructions to 1. download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk.
-- Instructions to 2. click to connect to DTS service he was willing to connect to. (same https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC), but because app will now be installed, link will be opened by app.
+- download link to the 3 major stores, Apple, Google, Huawei.
+- click to connect when downloaded. (same https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC), but because app will now be installed, link will be opened by app.
 - Terms and conditions (anchor link, https://hologram.zone/#terms)
 - Privacy policy (anchor link, https://hologram.zone/#privacy)
 - A footer with copyright, etc
 
-![withservice](./withservice.png)
+![mobileandservice](./mobileandservice.png)
+
+### Case #4: User arrives with a DTS invitation in URL, desktop or tablet
+
+User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
+
+The website MUST show:
+
+- A **short** explanation of what is Hologram
+- A QR code of this URL, with a text "Continue on your Mobile Phone"
+- Terms and conditions (anchor link, https://hologram.zone/#terms)
+- Privacy policy (anchor link, https://hologram.zone/#privacy)
+- A footer with copyright, etc
+
+![desktopandservice](./desktopandservice.png)
 
 ### Rendering of the invitation for connecting to service
 
