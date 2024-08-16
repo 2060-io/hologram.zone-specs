@@ -3,7 +3,7 @@
       
       {
         "title": "Hologram.zone website v1.0",
-        "spec_directory": "./specs",
+        "spec_directory": "./",
         "logo": "https://2060.io/images/header/logo-2060.svg",
         "logo_link": "https://2060.io",
         "output_path": "./",
