@@ -190,7 +190,7 @@ The website MUST show:
 
 ![desktopandservice](./desktopandservice.png)
 
-### Rendering of the invitation for connecting to service
+### Getting service name and icon
 
 To be able to render the service name and icon, we MUST try to get the `label` and `imageUrl` attributes in the `oob` or `_oob` parameter. First, we need to decode its base64.
 
