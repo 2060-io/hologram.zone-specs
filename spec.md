@@ -144,7 +144,7 @@ The website MUST show:
 - Privacy policy (anchor link, https://hologram.zone/#privacy)
 - A footer with copyright, etc
 
-![noservice](./assets/noservice.png)
+![noservice](./noservice.png)
 
 ### User arrives with a DTS invitation in URL
 
@@ -160,7 +160,7 @@ The website MUST show:
 - Privacy policy (anchor link, https://hologram.zone/#privacy)
 - A footer with copyright, etc
 
-![withservice](./assets/withservice.png)
+![withservice](./withservice.png)
 
 ### Rendering of the invitation for connecting to service
 
