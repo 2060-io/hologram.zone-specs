@@ -6,6 +6,7 @@
         "spec_directory": "./specs",
         "logo": "https://2060.io/images/header/logo-2060.svg",
         "logo_link": "https://2060.io",
+        "output_path": "./",
         "source": {
           "host": "github",
           "account": "2060-io",
