@@ -160,8 +160,6 @@ The website MUST show:
 - Privacy policy (anchor link, https://hologram.zone/#privacy)
 - A footer with copyright, etc
 
-Example:
-
 ![withservice](./withservice.png)
 
 ### Rendering of the invitation for connecting to service
