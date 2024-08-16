@@ -227,6 +227,9 @@ Development lifecycle must adhere to the [organization rules](https://github.com
 
 When a tag is created from the main branch, it MUST create a deployable container published to dockerhub.
 
+Repo for website MUST be named `hologram.zone-website`.
+
+
 ## References
 
 ### Normative References
