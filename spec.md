@@ -165,7 +165,6 @@ The website MUST show:
 
 User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 
-
 The website MUST show:
 
 - A **short** explanation of what is Hologram
@@ -193,12 +192,7 @@ The website MUST show:
 
 ### Rendering of the invitation for connecting to service
 
-In the case of Instructions to 2, the website:
-
-- MUST render the DTS icon and name with an explicit message such as "after downloading the App, click here to connect to ABC" if invitation is for a DIDComm v1.X service,
-- or just show a "after downloading the App, click here to connect to service" with no name/icon if DIDComm v2.X service.
-
-To know if it is a v1.X or v2.X DIDComm service, get the DTS icon and name, the website MUST decode the base64 `oob` or `_oob` message and, if possible, get the `label` and `imageUrl` attributes.
+To be able to render the service name and icon, we MUST try to get the `label` and `imageUrl` attributes in the `oob` or `_oob` parameter. First, we need to decode its base64.
 
 Example:
 
@@ -237,7 +231,7 @@ Extract the info like this:
 
 #### If oob message has "type": "https://didcomm.org/out-of-band/2.0/invitation" attribute
 
-At the moment, the page MUST just show the link to connect, saying "continue to service".
+At the moment, the page MUST just show the link to connect, saying "continue to service", as name and imageUrl cannot be extracted.
 
 #### Show found information on screen
 
