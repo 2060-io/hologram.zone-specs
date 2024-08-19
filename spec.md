@@ -176,6 +176,7 @@ The website MUST show:
 
 ![mobileandservice](./mobileandservice.png)
 
+
 ### Case #4: User arrives with a DTS invitation in URL, desktop or tablet
 
 User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
