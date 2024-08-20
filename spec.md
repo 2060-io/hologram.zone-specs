@@ -252,7 +252,7 @@ The design MUST be delivered in figma.
 
 Development lifecycle must adhere to the [organization rules](https://github.com/2060-io/organization/blob/main/basic-rules.md).
 
-When a tag is created from the main branch, it MUST create a deployable container published to dockerhub.
+When a tag is created from the main branch, it MUST deploy to github pages.
 
 Repo for website MUST be named `hologram.zone-website`.
 
