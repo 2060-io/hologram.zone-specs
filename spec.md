@@ -248,6 +248,10 @@ Texts and other internationalizable elements MUST be in a directory/files organi
 
 The design MUST be delivered in figma.
 
+Screen captures here:
+
+
+
 ## Repo, packaging and deployment
 
 Development lifecycle must adhere to the [organization rules](https://github.com/2060-io/organization/blob/main/basic-rules.md).
@@ -255,7 +259,6 @@ Development lifecycle must adhere to the [organization rules](https://github.com
 When a tag is created from the main branch, it MUST deploy to github pages.
 
 Repo for website MUST be named `hologram.zone-website`.
-
 
 ## References
 
