@@ -248,9 +248,7 @@ Texts and other internationalizable elements MUST be in a directory/files organi
 
 The design MUST be delivered in figma.
 
-Screen captures here:
-
-[https://github.com/2060-io/hologram.zone-specs/tree/main/assets](https://github.com/2060-io/hologram.zone-specs/tree/main/assets)
+Screen captures available in the `assets` directory of the repo.
 
 ## Repo, packaging and deployment
 
