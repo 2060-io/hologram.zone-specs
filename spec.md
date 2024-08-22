@@ -250,7 +250,7 @@ The design MUST be delivered in figma.
 
 Screen captures here:
 
-
+[https://github.com/2060-io/hologram.zone-specs/tree/main/assets](https://github.com/2060-io/hologram.zone-specs/tree/main/assets)
 
 ## Repo, packaging and deployment
 
