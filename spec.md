@@ -87,6 +87,29 @@ For more information:
 - [link1](https://dunnsolutions.com/about-us/insights/digital-solutions-blog/-/blogs/smart-app-banners-for-ios-and-android)
 - [link2 iOS](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners)
 
+### About App store detection
+
+*This section is non normative.*
+
+Hologram is available in Google Play, Huawei App Gallery, and Apple Store.
+
+In mobile environment, it is important to find the best way to properly detect which stor(s)) should we present to the user.
+
+For detecting which app store the user should download from, you can use use the user agent for detecting if iOS or Android.
+
+For Android, you could detect the app store using the following:
+
+[https://forums.developer.huawei.com/forumPortal/en/topic/0204421140621710058](https://forums.developer.huawei.com/forumPortal/en/topic/0204421140621710058)
+
+If detection is not a 100% sure, show all possible options to user.
+
+Based on the detection:
+
+- if iOS: show only link for app store
+- id Android, and play store detected: show only link for google
+- if Android, and huawei store detected: show only link for huawei
+- if Android, and play store AND huawei store detected: show both options
+- if Android, and nothing detected: show both options
 
 ### Hologram app is already installed on user's handset
 
@@ -134,7 +157,6 @@ user <-- browser: show hologram.zone content, with smart app banner with "Instal
 
 ![get or install](get-install.png)
 
-
 ### Hologram app is not installed on user's handset
 
 In this case, because OS cannot find a registered App for the URL starting with https://hologram.zone?oob=..., browser loads the URL. Smart App Banner SHOULD be rendered.
@@ -181,7 +203,7 @@ User was directed to https://hologram.zone/.
 - [PAGE-MAIN-1-2] Smart App Banner SHOULD be shown.
 - [PAGE-MAIN-1-3] Design MUST match [Figma - Mobile without a service](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0)
 - [PAGE-MAIN-1-4] i18n text and content MUST comply with [internationalization](#internationalization)
-- [PAGE-MAIN-1-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk MUST be shown.
+- [PAGE-MAIN-1-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei. App store [detection](#about-app-store-detection) SHOULD be used to offer only interesting links to user.
 - [PAGE-MAIN-1-6] Terms and conditions link, https://hologram.zone/user#terms, MUST be shown
 - [PAGE-MAIN-1-7] Privacy policy (anchor link, https://hologram.zone/user#privacy), MUST be shown
 - [PAGE-MAIN-1-8] A footer with copyrights, [Footer links](#footer-links), etc, MUST be shown
@@ -212,7 +234,7 @@ User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 - [PAGE-MAIN-3-2] Smart App Banner SHOULD be shown, with full URL.
 - [PAGE-MAIN-3-3] Design MUST match [Figma - Mobile with service](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0)
 - [PAGE-MAIN-3-4] i18n text and content MUST comply with [internationalization](#internationalization)
-- [PAGE-MAIN-3-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk MUST be shown.
+- [PAGE-MAIN-3-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei. App store [detection](#about-app-store-detection) SHOULD be used to offer only interesting links to user.
 - [PAGE-MAIN-3-6] Terms and conditions link, https://hologram.zone/user#terms, MUST be shown
 - [PAGE-MAIN-3-7] Privacy policy (anchor link, https://hologram.zone/user#privacy), MUST be shown
 - [PAGE-MAIN-3-8] A footer with copyrights, [Footer links](#footer-links), etc, MUST be shown
