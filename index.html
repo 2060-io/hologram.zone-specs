@@ -87,12 +87,13 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
 The key words MAY, MUST, MUST NOT, OPTIONAL, RECOMMENDED, REQUIRED, SHOULD, and SHOULD NOT in this document are to be interpreted as described in <a path-0="datatracker.ietf.org"path-1="doc"path-2="html"path-3="bcp14"href="https://datatracker.ietf.org/doc/html/bcp14" >BCP 14</a> <a path-0="w3c.github.io"path-1="vc-data-model"path-2="#bib-rfc2119"href="https://w3c.github.io/vc-data-model/#bib-rfc2119" >RFC2119</a> <a path-0="w3c.github.io"path-1="vc-data-model"path-2="#bib-rfc8174"href="https://w3c.github.io/vc-data-model/#bib-rfc8174" >RFC8174</a> when, and only when, they appear in all capitals, as shown here.</p>
 <h2 id="logic"><a class="toc-anchor" href="#logic" >§</a> Logic</h2>
+<p><em>This section is non-normative.</em></p>
 <p>Look at these 2 use cases:</p>
 <ul>
-<li>User clicks an hologram link (DTS) from his mobile phone.</li>
-<li>User scans an hologram link (DTS) from his mobile phone.</li>
+<li>User <em>clicks</em> an hologram link (DTS) from his mobile phone.</li>
+<li>User scans a QR representing an hologram link (DTS) from his mobile phone.</li>
 </ul>
-<p>In both case we are talking about the same URL. This URL MUST always be formatted as follows:</p>
+<p>In both case we are talking about the same URL. This URL is always be formatted as follows:</p>
 <pre><code>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC
 
 or
@@ -106,7 +107,7 @@ https://hologram.zone/?_oob=QIUiudggiUQ..&amp;tp=ABC
 </ul>
 <h3 id="hologram-app-is-already-installed-on-users-handset"><a class="toc-anchor" href="#hologram-app-is-already-installed-on-users-handset" >§</a> Hologram app is already installed on user’s handset</h3>
 <p>Operating system SHOULD detect that the URL starts with <a path-0="hologram.zone"path-1=""href="https://hologram.zone/" ><span>https://hologram.zone/</span></a> (we definitely rely on it), and because the Hologram App registered this URL in the OS, OS SHOULD automatically open the Hologram App, and app MUST automatically process the URL content (<code>oob</code> and <code>tp</code> params).</p>
-<div id="note-16" class="notice note"><a class="notice-link" href="#note-16">NOTE</a><p>Hologram.zone website is even not reached in this case.</p>
+<div id="note-1" class="notice note"><a class="notice-link" href="#note-1">NOTE</a><p>Hologram.zone website is even not reached in this case.</p>
 </div>
 <img src="https://www.plantuml.com/plantuml/svg/VPB1JiCm38RlUGfhNDTs4X925Mm3SU0Et7P94tU9rYPHx5BWwKbRIbK9SRFipxz_EpaIoyXTsmXIia5evGVSxdRGMyr6ICK-mkQDC6v04dGf015IXrKsICUmUOo-dylL5A-1Pz_uSvGjF8GmKYObreZvGV8lxn1whCWoJcmFLzTrfQkRTSVJwyjOrqmWn6ZhBijc0-KSG4IdCH8exnXJewz1pWEs9pUdUsEL0UjKqscaX2HzQAox33CeeBArHNroilBl28OvK5aKAzl5mVlgFi_poKsMxHStOqOrLbq8sE2a_8-AcEslL6G8QP-p9SQ86khqCdzhRC47T0E_N6OWok4C3XK3--J3qh3cOV4xCPz8OeZ6LBhlRvSufcEcd_8D" alt="uml diagram">
 <h3 id="hologram-app-is-not-installed-on-users-handset"><a class="toc-anchor" href="#hologram-app-is-not-installed-on-users-handset" >§</a> Hologram app is not installed on user’s handset</h3>
@@ -114,39 +115,58 @@ https://hologram.zone/?_oob=QIUiudggiUQ..&amp;tp=ABC
 <p>hologram.zone website MUST show a content to the user so that the following flow can be performed by the user:</p>
 <img src="https://www.plantuml.com/plantuml/svg/hLJ1RjGm4BtdAqRB1QHcjn8IGX7GWZXmG48gz9QBOy_6LhrZotOQuEiPEqtIe5NfWTDwP-QDtxmtpdLC8gJXPAieXKKuYP_mzl8IHgEIheHCBi3kDcBOWOWmy04gpmWZZHUKOFSfk75ETzDvMw2TTNqGf_rlHmWZTj4aBELwX1UlZvtgtcmHNnuGyD7xgP03snBXFKJcDZNYVt6R__pZUyce5A6g2krtTJqJREO312I58O9qb921xWXYvdZHqXmUjP4Q34axAEJxWFk3DNINxuWUfJaQL2s9pjqZw9HyR0w7pUI7A-Uwz_lzVc9JrnzMDYKYhP5t4PB6gVCJNQgP_gOBkIm4ZzIRc32WWYERTxxDfeCULq6i4oe-w-wiPqPk_GsOXa2pdaye7pN_BhedLqHeMgh1MnGHGRcHCfio5ETpgQ41SqaHY0E4ic0PUcyaRvT6AlKcBlZioyieJl_o1MvllhBw8hMKFLWzOI7v2X62oTwoiAzM2_FcDT1ZWdbfrv6dt4fZKMg5vqW3pZ-m5gH01XI99n7MOleFkyAJjMG8N32z8M71Yvur_7R3wmndt-RvxNhsQbqiywnIJ7C-CYnfTeWVqTNVMlp2MELJ2V7hNL3LDJzL_axz0G00" alt="uml diagram">
 <h2 id="pages"><a class="toc-anchor" href="#pages" >§</a> Pages</h2>
-<p>The website MUST be a single-page website.</p>
-<p>Website MUST show, in this order:</p>
-<h3 id="user-arrive-spontaneously-in-website-no-dts-invitation-in-url"><a class="toc-anchor" href="#user-arrive-spontaneously-in-website-no-dts-invitation-in-url" >§</a> User arrive spontaneously in website (no DTS invitation in URL)</h3>
+<p>The website MUST be a single-page website.
+We have 4 notable cases.</p>
+<h3 id="case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone"><a class="toc-anchor" href="#case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone" >§</a> Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone</h3>
+<p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/" ><span>https://hologram.zone/</span></a>.</p>
+<p>User MUST NOT be redirected to hologram app if app is already installed.</p>
+<p>The website MUST show:</p>
+<ul>
+<li>A header (if supported by OS the detection of the App) with GET or INSTALL action</li>
+<li>A <strong>short</strong> explanation of what is Hologram</li>
+<li>Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk.</li>
+<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>)</li>
+<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>)</li>
+<li>A footer with copyrights, <a href="#footer-links" >Footer links</a>, etc</li>
+</ul>
+<p><img src="mobile-direct.png" alt="Mobile direct"></p>
+<h3 id="case-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet"><a class="toc-anchor" href="#case-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet" >§</a> Case #2: when user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet</h3>
 <p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/" ><span>https://hologram.zone/</span></a>.</p>
 <p>The website MUST show:</p>
 <ul>
 <li>A <strong>short</strong> explanation of what is Hologram</li>
-<li>Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk.</li>
-<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="#terms"href="https://hologram.zone/#terms" ><span>https://hologram.zone/#terms</span></a>)</li>
-<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="#privacy"href="https://hologram.zone/#privacy" ><span>https://hologram.zone/#privacy</span></a>)</li>
+<li>A QR code of this URL, with a text “Continue on your Mobile Phone”</li>
+<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>)</li>
+<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>)</li>
 <li>A footer with copyright, etc</li>
 </ul>
-<p><img src="./noservice.png" alt="noservice"></p>
-<h3 id="user-arrives-with-a-dts-invitation-in-url"><a class="toc-anchor" href="#user-arrives-with-a-dts-invitation-in-url" >§</a> User arrives with a DTS invitation in URL</h3>
+<p><img src="./desktopnoservice.png" alt="desktopnoservice"></p>
+<h3 id="case-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone"><a class="toc-anchor" href="#case-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone" >§</a> Case #3: User arrives with a DTS invitation in URL, from a mobile phone</h3>
+<p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC" ><span>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC</span></a></p>
+<p>The website MUST show:</p>
+<ul>
+<li>A header (if supported by OS the detection of the App) with GET or INSTALL action</li>
+<li>A <strong>short</strong> explanation of what is Hologram</li>
+<li>download link to the 3 major stores, Apple, Google, Huawei. If possible: Show only the links compatible with cellphone. IE for iOS, only show apple link. For android, if huawei os, show huawei app gallery, else play store.</li>
+<li>user must click “refresh” in service to connect when downloaded. (same <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC" ><span>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC</span></a>), but because app will now be installed, link will be opened by app.</li>
+<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>)</li>
+<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>)</li>
+<li>A footer with copyright, etc</li>
+</ul>
+<p><img src="mobile-service.png" alt="mobile service"></p>
+<h3 id="case-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet"><a class="toc-anchor" href="#case-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet" >§</a> Case #4: User arrives with a DTS invitation in URL, desktop or tablet</h3>
 <p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC" ><span>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC</span></a></p>
 <p>The website MUST show:</p>
 <ul>
 <li>A <strong>short</strong> explanation of what is Hologram</li>
-<li>Instructions to 1. download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk.</li>
-<li>Instructions to 2. click to connect to DTS service he was willing to connect to. (same <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC" ><span>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC</span></a>), but because app will now be installed, link will be opened by app.</li>
-<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="#terms"href="https://hologram.zone/#terms" ><span>https://hologram.zone/#terms</span></a>)</li>
-<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="#privacy"href="https://hologram.zone/#privacy" ><span>https://hologram.zone/#privacy</span></a>)</li>
+<li>A QR code of this URL, with a text “Continue on your Mobile Phone”</li>
+<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>)</li>
+<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>)</li>
 <li>A footer with copyright, etc</li>
 </ul>
-<p>Example:</p>
-<p><img src="./withservice.png" alt="withservice"></p>
-<h3 id="rendering-of-the-invitation-for-connecting-to-service"><a class="toc-anchor" href="#rendering-of-the-invitation-for-connecting-to-service" >§</a> Rendering of the invitation for connecting to service</h3>
-<p>In the case of Instructions to 2, the website:</p>
-<ul>
-<li>MUST render the DTS icon and name with an explicit message such as “after downloading the App, click here to connect to ABC” if invitation is for a DIDComm v1.X service,</li>
-<li>or just show a “after downloading the App, click here to connect to service” with no name/icon if DIDComm v2.X service.</li>
-</ul>
-<p>To know if it is a v1.X or v2.X DIDComm service, get the DTS icon and name, the website MUST decode the base64 <code>oob</code> or <code>_oob</code> message and, if possible, get the <code>label</code> and <code>imageUrl</code> attributes.</p>
+<p><img src="./desktopandservice.png" alt="desktopandservice"></p>
+<h3 id="getting-service-name-and-icon"><a class="toc-anchor" href="#getting-service-name-and-icon" >§</a> Getting service name and icon</h3>
+<p>To be able to render the service name and icon, we MUST try to get the <code>label</code> and <code>imageUrl</code> attributes in the <code>oob</code> or <code>_oob</code> parameter. First, we need to decode its base64.</p>
 <p>Example:</p>
 <pre><code>eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiJkOWRlMTU5Yy0zNTk5LTQ5ZDAtOGQ0Zi0zZjY5NTAzYzc3MjMiLCJsYWJlbCI6IkRlbW8gQ2hhdGJvdCBBZ2VudCIsImFjY2VwdCI6WyJkaWRjb21tL2FpcDEiLCJkaWRjb21tL2FpcDI7ZW52PXJmYzE5Il0sImhhbmRzaGFrZV9wcm90b2NvbHMiOlsiaHR0cHM6Ly9kaWRjb21tLm9yZy9kaWRleGNoYW5nZS8xLjEiLCJodHRwczovL2RpZGNvbW0ub3JnL2Nvbm5lY3Rpb25zLzEuMCJdLCJzZXJ2aWNlcyI6WyJkaWQ6d2ViOmNoYXRib3QtZGVtby5kZXYuMjA2MC5pbyJdLCJpbWFnZVVybCI6Imh0dHBzOi8vZC5jaGF0Ym90LWRlbW8uZGV2LjIwNjAuaW8vYXZhdGFyLnBuZyJ9
 </code></pre>
@@ -176,17 +196,21 @@ https://hologram.zone/?_oob=QIUiudggiUQ..&amp;tp=ABC
 <li><code>imageUrl</code>: “<a path-0="d.chatbot-demo.dev.2060.io"path-1="avatar.png"href="https://d.chatbot-demo.dev.2060.io/avatar.png" ><span>https://d.chatbot-demo.dev.2060.io/avatar.png</span></a>”.</li>
 </ul>
 <h4 id="if-oob-message-has-type-httpsdidcommorgout-of-band20invitation-attribute"><a class="toc-anchor" href="#if-oob-message-has-type-httpsdidcommorgout-of-band20invitation-attribute" >§</a> If oob message has “type”: “<a path-0="didcomm.org"path-1="out-of-band"path-2="2.0"path-3="invitation"href="https://didcomm.org/out-of-band/2.0/invitation" ><span>https://didcomm.org/out-of-band/2.0/invitation</span></a>” attribute</h4>
-<p>At the moment, the page MUST just show the link to connect, saying “continue to service”.</p>
+<p>At the moment, the page MUST just show the link to connect, saying “continue to service”, as name and imageUrl cannot be extracted.</p>
 <h4 id="show-found-information-on-screen"><a class="toc-anchor" href="#show-found-information-on-screen" >§</a> Show found information on screen</h4>
 <p>Based on the information it was possible to get, the maximum possible info MUST be shown.</p>
+<h2 id="terms-conditions-privacy-policy"><a class="toc-anchor" href="#terms-conditions-privacy-policy" >§</a> Terms &amp; conditions, Privacy Policy</h2>
+<p>All in the same page. MUST be compatible with internationalization below.
+Content (in english) <a href="" >here</a>.</p>
 <h2 id="internationalization"><a class="toc-anchor" href="#internationalization" >§</a> Internationalization</h2>
 <p>Website MUST detect browser’s language and render the website in the language of the browser if possible, else MUST fallback to english.</p>
 <p>Texts and other internationalizable elements MUST be in a directory/files organized by language so that anyone can fork the project or create a branch and add a new language.</p>
 <h2 id="design"><a class="toc-anchor" href="#design" >§</a> Design</h2>
 <p>The design MUST be delivered in figma.</p>
+<p>Screen captures available in the <code>assets</code> directory of the repo.</p>
 <h2 id="repo-packaging-and-deployment"><a class="toc-anchor" href="#repo-packaging-and-deployment" >§</a> Repo, packaging and deployment</h2>
 <p>Development lifecycle must adhere to the <a path-0="github.com"path-1="2060-io"path-2="organization"path-3="blob"path-4="main"path-5="basic-rules.md"href="https://github.com/2060-io/organization/blob/main/basic-rules.md" >organization rules</a>.</p>
-<p>When a tag is created from the main branch, it MUST create a deployable container published to dockerhub.</p>
+<p>When a tag is created from the main branch, it MUST deploy to github pages.</p>
 <p>Repo for website MUST be named <code>hologram.zone-website</code>.</p>
 <h2 id="references"><a class="toc-anchor" href="#references" >§</a> References</h2>
 <h3 id="normative-references"><a class="toc-anchor" href="#normative-references" >§</a> Normative References</h3>
@@ -200,6 +224,15 @@ https://hologram.zone/?_oob=QIUiudggiUQ..&amp;tp=ABC
       
 </dl>
 </p>
+<h3 id="footer-links"><a class="toc-anchor" href="#footer-links" >§</a> Footer links</h3>
+<ul>
+<li><a path-0="identify.foundation"href="https://identify.foundation" >DIF</a></li>
+<li><a path-0="openwallet.foundation"path-1=""href="https://openwallet.foundation/" >OpenWallet</a></li>
+<li><a path-0="github.com"path-1="openwallet-foundation"path-2="credo-ts"href="https://github.com/openwallet-foundation/credo-ts" >Credo</a></li>
+<li><a path-0="trustoverip.org"path-1=""href="https://trustoverip.org/" >ToIP</a></li>
+<li><a path-0="www.w3.org"path-1=""href="https://www.w3.org/" >W3C</a></li>
+<li><a path-0="identity.foundation"path-1="didcomm-messaging"path-2="spec"path-3=""href="https://identity.foundation/didcomm-messaging/spec/" >DIDComm</a></li>
+</ul>
 
                     </article>    
       
@@ -240,9 +273,11 @@ https://hologram.zone/?_oob=QIUiudggiUQ..&amp;tp=ABC
 </li>
 <li><a href="#pages" >Pages</a>
 <ul>
-<li><a href="#user-arrive-spontaneously-in-website-no-dts-invitation-in-url" >User arrive spontaneously in website (no DTS invitation in URL)</a></li>
-<li><a href="#user-arrives-with-a-dts-invitation-in-url" >User arrives with a DTS invitation in URL</a></li>
-<li><a href="#rendering-of-the-invitation-for-connecting-to-service" >Rendering of the invitation for connecting to service</a>
+<li><a href="#case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone" >Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone</a></li>
+<li><a href="#case-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet" >Case #2: when user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet</a></li>
+<li><a href="#case-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone" >Case #3: User arrives with a DTS invitation in URL, from a mobile phone</a></li>
+<li><a href="#case-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet" >Case #4: User arrives with a DTS invitation in URL, desktop or tablet</a></li>
+<li><a href="#getting-service-name-and-icon" >Getting service name and icon</a>
 <ul>
 <li><a href="#if-oob-message-has-typehttpsdidcommorgout-of-band11invitation-attribute" >If oob message has “@type”:“https://didcomm.org/out-of-band/1.1/invitation” attribute</a></li>
 <li><a href="#if-oob-message-has-type-httpsdidcommorgout-of-band20invitation-attribute" >If oob message has “type”: “https://didcomm.org/out-of-band/2.0/invitation” attribute</a></li>
@@ -251,12 +286,14 @@ https://hologram.zone/?_oob=QIUiudggiUQ..&amp;tp=ABC
 </li>
 </ul>
 </li>
+<li><a href="#terms-conditions-privacy-policy" >Terms &amp; conditions, Privacy Policy</a></li>
 <li><a href="#internationalization" >Internationalization</a></li>
 <li><a href="#design" >Design</a></li>
 <li><a href="#repo-packaging-and-deployment" >Repo, packaging and deployment</a></li>
 <li><a href="#references" >References</a>
 <ul>
 <li><a href="#normative-references" >Normative References</a></li>
+<li><a href="#footer-links" >Footer links</a></li>
 </ul>
 </li>
 </ul>
