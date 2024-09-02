@@ -8,7 +8,7 @@ The Hologram App (“Hologram”), is provided by 2060 OÜ, Ahtri tn 12, 10151 T
 
 You must be at least 17 years old to use our Services. The minimum age to use our Services without parental approval may be higher in your home country.
 
-### Privacy of user data</pp>
+### Privacy of user data
 
 2060.io does not sell, rent or monetize your personal data or content in any way – ever. Please read our Privacy Policy to understand how we safeguard the information you provide when using our Services. For the purpose of operating our Services, you agree to our data practices as described in our Privacy Policy, as well as the transfer of your encrypted information and metadata to Canada and other countries where we have or use facilities, service providers or partners. Examples would be Third Party Providers processing your support tickets.
 
