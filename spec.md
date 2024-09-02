@@ -280,3 +280,11 @@ Repo for website MUST be named `hologram.zone-website`.
 - [ToIP](https://trustoverip.org/)
 - [W3C](https://www.w3.org/)
 - [DIDComm](https://identity.foundation/didcomm-messaging/spec/)
+
+### TyC
+
+[TyC](./tyc.md)
+
+### PP
+
+[Privacy Policy](./pp.md)
