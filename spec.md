@@ -137,15 +137,18 @@ We have 4 notable cases.
 
 User was directed to https://hologram.zone/.
 
+User MUST NOT be redirected to hologram app if app is already installed.
+
 The website MUST show:
 
+- A header (if supported by OS the detection of the App) with GET or INSTALL action
 - A **short** explanation of what is Hologram
 - Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk.
-- Terms and conditions (anchor link, https://hologram.zone/#terms)
-- Privacy policy (anchor link, https://hologram.zone/#privacy)
-- A footer with copyright, etc
+- Terms and conditions (anchor link, https://hologram.zone/user#terms)
+- Privacy policy (anchor link, https://hologram.zone/user#privacy)
+- A footer with copyrights, [Footer links](#footer-links), etc
 
-![mobilenoservice](./mobilenoservice.png)
+![Mobile direct](mobile-direct.png)
 
 ### Case #2: when user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet
 
@@ -155,8 +158,8 @@ The website MUST show:
 
 - A **short** explanation of what is Hologram
 - A QR code of this URL, with a text "Continue on your Mobile Phone"
-- Terms and conditions (anchor link, https://hologram.zone/#terms)
-- Privacy policy (anchor link, https://hologram.zone/#privacy)
+- Terms and conditions (anchor link, https://hologram.zone/user#terms)
+- Privacy policy (anchor link, https://hologram.zone/user#privacy)
 - A footer with copyright, etc
 
 ![desktopnoservice](./desktopnoservice.png)
@@ -167,15 +170,15 @@ User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 
 The website MUST show:
 
+- A header (if supported by OS the detection of the App) with GET or INSTALL action
 - A **short** explanation of what is Hologram
-- download link to the 3 major stores, Apple, Google, Huawei.
-- click to connect when downloaded. (same https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC), but because app will now be installed, link will be opened by app.
-- Terms and conditions (anchor link, https://hologram.zone/#terms)
-- Privacy policy (anchor link, https://hologram.zone/#privacy)
+- download link to the 3 major stores, Apple, Google, Huawei. If possible: Show only the links compatible with cellphone. IE for iOS, only show apple link. For android, if huawei os, show huawei app gallery, else play store.
+- user must click "refresh" in service to connect when downloaded. (same https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC), but because app will now be installed, link will be opened by app.
+- Terms and conditions (anchor link, https://hologram.zone/user#terms)
+- Privacy policy (anchor link, https://hologram.zone/user#privacy)
 - A footer with copyright, etc
 
-![mobileandservice](./mobileandservice.png)
-
+![mobile service](mobile-service.png)
 
 ### Case #4: User arrives with a DTS invitation in URL, desktop or tablet
 
@@ -185,8 +188,8 @@ The website MUST show:
 
 - A **short** explanation of what is Hologram
 - A QR code of this URL, with a text "Continue on your Mobile Phone"
-- Terms and conditions (anchor link, https://hologram.zone/#terms)
-- Privacy policy (anchor link, https://hologram.zone/#privacy)
+- Terms and conditions (anchor link, https://hologram.zone/user#terms)
+- Privacy policy (anchor link, https://hologram.zone/user#privacy)
 - A footer with copyright, etc
 
 ![desktopandservice](./desktopandservice.png)
@@ -238,6 +241,11 @@ At the moment, the page MUST just show the link to connect, saying "continue to 
 
 Based on the information it was possible to get, the maximum possible info MUST be shown.
 
+## Terms & conditions, Privacy Policy
+
+All in the same page. MUST be compatible with internationalization below.
+Content (in english) [here]().
+
 ## Internationalization
 
 Website MUST detect browser's language and render the website in the language of the browser if possible, else MUST fallback to english.
@@ -263,3 +271,12 @@ Repo for website MUST be named `hologram.zone-website`.
 ### Normative References
 
 [[spec-norm]]
+
+### Footer links
+
+- [DIF](https://identify.foundation)
+- [OpenWallet](https://openwallet.foundation/)
+- [Credo](https://github.com/openwallet-foundation/credo-ts)
+- [ToIP](https://trustoverip.org/)
+- [W3C](https://www.w3.org/)
+- [DIDComm](https://identity.foundation/didcomm-messaging/spec/)
