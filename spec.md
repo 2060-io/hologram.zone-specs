@@ -274,7 +274,7 @@ Repo for website MUST be named `hologram.zone-website`.
 
 ### Footer links
 
-- [DIF](https://identify.foundation)
+- [DIF](https://identity.foundation)
 - [OpenWallet](https://openwallet.foundation/)
 - [Credo](https://github.com/openwallet-foundation/credo-ts)
 - [ToIP](https://trustoverip.org/)
