@@ -73,13 +73,29 @@ where:
 - `oob` (or `_oob`) (*mandatory*): is the out-of-band invitation to the DTS;
 - `tp` (string) (*optional*): is an URL encoded parameter as specified in [[spec-norm:rfc3986]], used by DTSs to know from where the user is coming (advertising, etc).
 
+### About Smart App Banner
+
+*This section is non normative.*
+
+A Smart App Banner is a banner that is shown it the top of the page, above the content, that detects if a app is already installed or not.
+
+It is straightforward for iOS/safari but not for other browsers/os combination.
+
+For more information:
+
+- [link0](https://medium.com/umamitech-blog/smart-app-banners-for-ios-and-android-a-handmade-solution-7785d6bca205)
+- [link1](https://dunnsolutions.com/about-us/insights/digital-solutions-blog/-/blogs/smart-app-banners-for-ios-and-android)
+- [link2 iOS](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners)
+
+
 ### Hologram app is already installed on user's handset
 
-Operating system SHOULD detect that the URL starts with https://hologram.zone/ (we definitely rely on it), and because the Hologram App registered this URL in the OS, OS SHOULD automatically open the Hologram App, and app MUST automatically process the URL content (`oob` and `tp` params).
+- If user access hologram URL and URL starts with https://hologram.zone/?oob... or https://hologram.zone/?_oob...: if Hologram app is installed, it should be opened, and app MUST automatically process the URL content (`oob` and `tp` params).
 
-::: note
-Hologram.zone website is even not reached in this case.
-:::
+- If user access hologram URL and URL doesn't starts with https://hologram.zone/?oob... or https://hologram.zone/?_oob...: page MUST be rendered an Hologram app not opened. Smart App Banner SHOULD be rendered.
+
+https://hologram.zone/?oob... or https://hologram.zone/?_oob...:
+
 
 ```plantuml
 scale max 800 width
@@ -97,9 +113,31 @@ user --> holo: yes
 holo --> dts: connect
 ```
 
+https://hologram.zone/:
+
+
+```plantuml
+scale max 800 width
+actor "User" as user 
+participant "Browser" as browser
+participant "hologram.zone website" as hw #3fbdb6
+participant "DTS" as dts 
+
+user <-- browser: browser renders content of a website,\ncontent which includes a link to\nhttps://hologram.zone/
+user --> browser: user clicks the link https://hologram.zone/
+browser --> browser: app registered for https://hologram.zone/
+browser --> hw: GET /
+browser <-- hw: OK
+user <-- browser: show hologram.zone content, with smart app banner with "Install or Get"
+
+```
+
+![get or install](get-install.png)
+
+
 ### Hologram app is not installed on user's handset
 
-In this case, because OS cannot find a registered App for the URL starting with https://hologram.zone?oob=..., browser loads the URL.
+In this case, because OS cannot find a registered App for the URL starting with https://hologram.zone?oob=..., browser loads the URL. Smart App Banner SHOULD be rendered.
 
 hologram.zone website MUST show a content to the user so that the following flow can be performed by the user:
 
@@ -130,27 +168,29 @@ holo --> dts: connect
 
 ## Pages
 
-The website MUST be a single-page website.
-We have 4 notable cases.
+The website MUST have 2 pages.
 
-### Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone
+- [PAGE-MAIN] Main page: We have 4 notable cases [PAGE-MAIN-1], [PAGE-MAIN-2], [PAGE-MAIN-3], [PAGE-MAIN-4].
+- [PAGE-TYC] Terms and Conditions and Privacy Policy.
+
+### [PAGE-MAIN-1] Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone
 
 User was directed to https://hologram.zone/.
 
-User MUST NOT be redirected to hologram app if app is already installed.
+- [PAGE-MAIN-1-1] User MUST NOT be redirected to hologram app if app is already installed.
+- [PAGE-MAIN-1-2] Smart App Banner SHOULD be shown.
+- [PAGE-MAIN-1-3] Design MUST match [Figma - Mobile without a service](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0)
+- [PAGE-MAIN-1-4] i18n text and content MUST comply with [internationalization](#internationalization)
+- [PAGE-MAIN-1-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk MUST be shown.
+- [PAGE-MAIN-1-6] Terms and conditions link, https://hologram.zone/user#terms, MUST be shown
+- [PAGE-MAIN-1-7] Privacy policy (anchor link, https://hologram.zone/user#privacy), MUST be shown
+- [PAGE-MAIN-1-8] A footer with copyrights, [Footer links](#footer-links), etc, MUST be shown
 
-The website MUST show:
-
-- A header (if supported by OS the detection of the App) with GET or INSTALL action
-- A **short** explanation of what is Hologram
-- Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk.
-- Terms and conditions (anchor link, https://hologram.zone/user#terms)
-- Privacy policy (anchor link, https://hologram.zone/user#privacy)
-- A footer with copyrights, [Footer links](#footer-links), etc
+Illustration:
 
 ![Mobile direct](mobile-direct.png)
 
-### Case #2: when user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet
+### [PAGE-MAIN-2] When user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet
 
 User was directed to https://hologram.zone/.
 
@@ -164,23 +204,26 @@ The website MUST show:
 
 ![desktopnoservice](./desktopnoservice.png)
 
-### Case #3: User arrives with a DTS invitation in URL, from a mobile phone
+### [PAGE-MAIN-3] User arrives with a DTS invitation in URL, from a mobile phone
 
 User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 
-The website MUST show:
+- [PAGE-MAIN-3-1] User MUST be redirected to hologram app if app is already installed, else website is rendered.
+- [PAGE-MAIN-3-2] Smart App Banner SHOULD be shown, with full URL.
+- [PAGE-MAIN-3-3] Design MUST match [Figma - Mobile with service](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0)
+- [PAGE-MAIN-3-4] i18n text and content MUST comply with [internationalization](#internationalization)
+- [PAGE-MAIN-3-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk MUST be shown.
+- [PAGE-MAIN-3-6] Terms and conditions link, https://hologram.zone/user#terms, MUST be shown
+- [PAGE-MAIN-3-7] Privacy policy (anchor link, https://hologram.zone/user#privacy), MUST be shown
+- [PAGE-MAIN-3-8] A footer with copyrights, [Footer links](#footer-links), etc, MUST be shown
+- [PAGE-MAIN-3-9] If user install app and click "refresh" in the hidden service zone, it reload the page and send user to hologram if app installed [PAGE-MAIN-3-1]
+- [PAGE-MAIN-3-10] service icon and name MUST be rendered as explained in [Getting service name and icon](#getting-service-name-and-icon).
 
-- A header (if supported by OS the detection of the App) with GET or INSTALL action
-- A **short** explanation of what is Hologram
-- download link to the 3 major stores, Apple, Google, Huawei. If possible: Show only the links compatible with cellphone. IE for iOS, only show apple link. For android, if huawei os, show huawei app gallery, else play store.
-- user must click "refresh" in service to connect when downloaded. (same https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC), but because app will now be installed, link will be opened by app.
-- Terms and conditions (anchor link, https://hologram.zone/user#terms)
-- Privacy policy (anchor link, https://hologram.zone/user#privacy)
-- A footer with copyright, etc
+Illustration:
 
 ![mobile service](mobile-service.png)
 
-### Case #4: User arrives with a DTS invitation in URL, desktop or tablet
+### [PAGE-MAIN-4] User arrives with a DTS invitation in URL, desktop or tablet
 
 User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 
@@ -194,7 +237,20 @@ The website MUST show:
 
 ![desktopandservice](./desktopandservice.png)
 
-### Getting service name and icon
+### [PAGE-TYC] Terms and Conditions and Privacy Policy.
+
+- [PAGE-TYC-1] Smart App Banner SHOULD be shown, with full URL.
+- [PAGE-TYC-2] If user clicked the terms and conditions or privacy policy link, parameters that where present in main page URL MUST be propagated.
+- [PAGE-TYC-3] Design MUST match [Figma - TyC](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0)
+- [PAGE-TYC-4] i18n text and content MUST comply with [internationalization](#internationalization)
+- [PAGE-TYC-5] Home button MUST send user to / including the propagated parameters that were received, such as _oob or tp
+
+Sample Content (in english):
+
+- [Terms and Conditions](./tyc.md)
+- [Privacy Policy](./pp.md)
+
+## Getting service name and icon
 
 To be able to render the service name and icon, we MUST try to get the `label` and `imageUrl` attributes in the `oob` or `_oob` parameter. First, we need to decode its base64.
 
@@ -240,11 +296,6 @@ At the moment, the page MUST just show the link to connect, saying "continue to 
 #### Show found information on screen
 
 Based on the information it was possible to get, the maximum possible info MUST be shown.
-
-## Terms & conditions, Privacy Policy
-
-All in the same page. MUST be compatible with internationalization below.
-Content (in english) [here]().
 
 ## Internationalization
 

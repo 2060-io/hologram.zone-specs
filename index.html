@@ -105,32 +105,55 @@ https://hologram.zone/?_oob=QIUiudggiUQ..&amp;tp=ABC
 <li><code>oob</code> (or <code>_oob</code>) (<em>mandatory</em>): is the out-of-band invitation to the DTS;</li>
 <li><code>tp</code> (string) (<em>optional</em>): is an URL encoded parameter as specified in [<a class="spec-reference" href="#ref:RFC3986">RFC3986</a>], used by DTSs to know from where the user is coming (advertising, etc).</li>
 </ul>
+<h3 id="about-smart-app-banner"><a class="toc-anchor" href="#about-smart-app-banner" >§</a> About Smart App Banner</h3>
+<p><em>This section is non normative.</em></p>
+<p>A Smart App Banner is a banner that is shown it the top of the page, above the content, that detects if a app is already installed or not.</p>
+<p>It is straightforward for iOS/safari but not for other browsers/os combination.</p>
+<p>For more information:</p>
+<ul>
+<li><a path-0="medium.com"path-1="umamitech-blog"path-2="smart-app-banners-for-ios-and-android-a-handmade-solution-7785d6bca205"href="https://medium.com/umamitech-blog/smart-app-banners-for-ios-and-android-a-handmade-solution-7785d6bca205" >link0</a></li>
+<li><a path-0="dunnsolutions.com"path-1="about-us"path-2="insights"path-3="digital-solutions-blog"path-4="-"path-5="blogs"path-6="smart-app-banners-for-ios-and-android"href="https://dunnsolutions.com/about-us/insights/digital-solutions-blog/-/blogs/smart-app-banners-for-ios-and-android" >link1</a></li>
+<li><a path-0="developer.apple.com"path-1="documentation"path-2="webkit"path-3="promoting_apps_with_smart_app_banners"href="https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners" >link2 iOS</a></li>
+</ul>
 <h3 id="hologram-app-is-already-installed-on-users-handset"><a class="toc-anchor" href="#hologram-app-is-already-installed-on-users-handset" >§</a> Hologram app is already installed on user’s handset</h3>
-<p>Operating system SHOULD detect that the URL starts with <a path-0="hologram.zone"path-1=""href="https://hologram.zone/" ><span>https://hologram.zone/</span></a> (we definitely rely on it), and because the Hologram App registered this URL in the OS, OS SHOULD automatically open the Hologram App, and app MUST automatically process the URL content (<code>oob</code> and <code>tp</code> params).</p>
-<div id="note-11" class="notice note"><a class="notice-link" href="#note-11">NOTE</a><p>Hologram.zone website is even not reached in this case.</p>
-</div>
+<ul>
+<li>
+<p>If user access hologram URL and URL starts with <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob" ><span>https://hologram.zone/?oob</span></a>… or <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?_oob" ><span>https://hologram.zone/?_oob</span></a>…: if Hologram app is installed, it should be opened, and app MUST automatically process the URL content (<code>oob</code> and <code>tp</code> params).</p>
+</li>
+<li>
+<p>If user access hologram URL and URL doesn’t starts with <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob" ><span>https://hologram.zone/?oob</span></a>… or <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?_oob" ><span>https://hologram.zone/?_oob</span></a>…: page MUST be rendered an Hologram app not opened. Smart App Banner SHOULD be rendered.</p>
+</li>
+</ul>
+<p><a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob" ><span>https://hologram.zone/?oob</span></a>… or <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?_oob" ><span>https://hologram.zone/?_oob</span></a>…:</p>
 <img src="https://www.plantuml.com/plantuml/svg/VPB1JiCm38RlUGfhNDTs4X925Mm3SU0Et7P94tU9rYPHx5BWwKbRIbK9SRFipxz_EpaIoyXTsmXIia5evGVSxdRGMyr6ICK-mkQDC6v04dGf015IXrKsICUmUOo-dylL5A-1Pz_uSvGjF8GmKYObreZvGV8lxn1whCWoJcmFLzTrfQkRTSVJwyjOrqmWn6ZhBijc0-KSG4IdCH8exnXJewz1pWEs9pUdUsEL0UjKqscaX2HzQAox33CeeBArHNroilBl28OvK5aKAzl5mVlgFi_poKsMxHStOqOrLbq8sE2a_8-AcEslL6G8QP-p9SQ86khqCdzhRC47T0E_N6OWok4C3XK3--J3qh3cOV4xCPz8OeZ6LBhlRvSufcEcd_8D" alt="uml diagram">
+<p><a path-0="hologram.zone"path-1=":"href="https://hologram.zone/:" ><span>https://hologram.zone/:</span></a></p>
+<img src="https://www.plantuml.com/plantuml/svg/ZLB1IiD04BtdAuPuRKn142aYHPGY7ZnORxriDfFkqirks9cmujSxtHXAGC7Ry6RUlCURsHAho6Fl2jBA8VJg4-xMQqYsPLCepI52-K4OIr04enHG3CAmsWxACvIFCQIvtKprSi045uvHzTTVmICaRCWovd6JuEgcQzhcTibush_dVii4HP4rxwjgthwP2uZeMum4EdX68OOEr2omElWPJiPg0zPhDxP8CkAiFm67WpVC0stgUc6ndXIhwk6Yc17jh3uHiC5fmn_isTrYWHe6iNkqn1YnXKvI_GVTf0tidlTmGSyvdD6trrzo8HCIBEF-oM0bzsG3r4lCsKkZl1TwHiiNBq_W78Yf7N9PR2LN-OXl" alt="uml diagram">
+<p><img src="get-install.png" alt="get or install"></p>
 <h3 id="hologram-app-is-not-installed-on-users-handset"><a class="toc-anchor" href="#hologram-app-is-not-installed-on-users-handset" >§</a> Hologram app is not installed on user’s handset</h3>
-<p>In this case, because OS cannot find a registered App for the URL starting with <a path-0="hologram.zone?oob="href="https://hologram.zone?oob=" ><span>https://hologram.zone?oob=</span></a>…, browser loads the URL.</p>
+<p>In this case, because OS cannot find a registered App for the URL starting with <a path-0="hologram.zone?oob="href="https://hologram.zone?oob=" ><span>https://hologram.zone?oob=</span></a>…, browser loads the URL. Smart App Banner SHOULD be rendered.</p>
 <p>hologram.zone website MUST show a content to the user so that the following flow can be performed by the user:</p>
 <img src="https://www.plantuml.com/plantuml/svg/hLJ1RjGm4BtdAqRB1QHcjn8IGX7GWZXmG48gz9QBOy_6LhrZotOQuEiPEqtIe5NfWTDwP-QDtxmtpdLC8gJXPAieXKKuYP_mzl8IHgEIheHCBi3kDcBOWOWmy04gpmWZZHUKOFSfk75ETzDvMw2TTNqGf_rlHmWZTj4aBELwX1UlZvtgtcmHNnuGyD7xgP03snBXFKJcDZNYVt6R__pZUyce5A6g2krtTJqJREO312I58O9qb921xWXYvdZHqXmUjP4Q34axAEJxWFk3DNINxuWUfJaQL2s9pjqZw9HyR0w7pUI7A-Uwz_lzVc9JrnzMDYKYhP5t4PB6gVCJNQgP_gOBkIm4ZzIRc32WWYERTxxDfeCULq6i4oe-w-wiPqPk_GsOXa2pdaye7pN_BhedLqHeMgh1MnGHGRcHCfio5ETpgQ41SqaHY0E4ic0PUcyaRvT6AlKcBlZioyieJl_o1MvllhBw8hMKFLWzOI7v2X62oTwoiAzM2_FcDT1ZWdbfrv6dt4fZKMg5vqW3pZ-m5gH01XI99n7MOleFkyAJjMG8N32z8M71Yvur_7R3wmndt-RvxNhsQbqiywnIJ7C-CYnfTeWVqTNVMlp2MELJ2V7hNL3LDJzL_axz0G00" alt="uml diagram">
 <h2 id="pages"><a class="toc-anchor" href="#pages" >§</a> Pages</h2>
-<p>The website MUST be a single-page website.
-We have 4 notable cases.</p>
-<h3 id="case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone"><a class="toc-anchor" href="#case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone" >§</a> Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone</h3>
-<p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/" ><span>https://hologram.zone/</span></a>.</p>
-<p>User MUST NOT be redirected to hologram app if app is already installed.</p>
-<p>The website MUST show:</p>
+<p>The website MUST have 2 pages.</p>
 <ul>
-<li>A header (if supported by OS the detection of the App) with GET or INSTALL action</li>
-<li>A <strong>short</strong> explanation of what is Hologram</li>
-<li>Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk.</li>
-<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>)</li>
-<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>)</li>
-<li>A footer with copyrights, <a href="#footer-links" >Footer links</a>, etc</li>
+<li>[PAGE-MAIN] Main page: We have 4 notable cases [PAGE-MAIN-1], [PAGE-MAIN-2], [PAGE-MAIN-3], [PAGE-MAIN-4].</li>
+<li>[PAGE-TYC] Terms and Conditions and Privacy Policy.</li>
 </ul>
+<h3 id="page-main-1-case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone"><a class="toc-anchor" href="#page-main-1-case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone" >§</a> [PAGE-MAIN-1] Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone</h3>
+<p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/" ><span>https://hologram.zone/</span></a>.</p>
+<ul>
+<li>[PAGE-MAIN-1-1] User MUST NOT be redirected to hologram app if app is already installed.</li>
+<li>[PAGE-MAIN-1-2] Smart App Banner SHOULD be shown.</li>
+<li>[PAGE-MAIN-1-3] Design MUST match <a path-0="www.figma.com"path-1="design"path-2="nol5mbLWElFLcm1ThIqbHn"path-3="Hologram.zone"href="https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0" >Figma - Mobile without a service</a></li>
+<li>[PAGE-MAIN-1-4] i18n text and content MUST comply with <a href="#internationalization" >internationalization</a></li>
+<li>[PAGE-MAIN-1-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk MUST be shown.</li>
+<li>[PAGE-MAIN-1-6] Terms and conditions link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>, MUST be shown</li>
+<li>[PAGE-MAIN-1-7] Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>), MUST be shown</li>
+<li>[PAGE-MAIN-1-8] A footer with copyrights, <a href="#footer-links" >Footer links</a>, etc, MUST be shown</li>
+</ul>
+<p>Illustration:</p>
 <p><img src="mobile-direct.png" alt="Mobile direct"></p>
-<h3 id="case-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet"><a class="toc-anchor" href="#case-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet" >§</a> Case #2: when user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet</h3>
+<h3 id="page-main-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet"><a class="toc-anchor" href="#page-main-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet" >§</a> [PAGE-MAIN-2] When user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet</h3>
 <p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/" ><span>https://hologram.zone/</span></a>.</p>
 <p>The website MUST show:</p>
 <ul>
@@ -141,20 +164,23 @@ We have 4 notable cases.</p>
 <li>A footer with copyright, etc</li>
 </ul>
 <p><img src="./desktopnoservice.png" alt="desktopnoservice"></p>
-<h3 id="case-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone"><a class="toc-anchor" href="#case-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone" >§</a> Case #3: User arrives with a DTS invitation in URL, from a mobile phone</h3>
+<h3 id="page-main-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone"><a class="toc-anchor" href="#page-main-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone" >§</a> [PAGE-MAIN-3] User arrives with a DTS invitation in URL, from a mobile phone</h3>
 <p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC" ><span>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC</span></a></p>
-<p>The website MUST show:</p>
 <ul>
-<li>A header (if supported by OS the detection of the App) with GET or INSTALL action</li>
-<li>A <strong>short</strong> explanation of what is Hologram</li>
-<li>download link to the 3 major stores, Apple, Google, Huawei. If possible: Show only the links compatible with cellphone. IE for iOS, only show apple link. For android, if huawei os, show huawei app gallery, else play store.</li>
-<li>user must click “refresh” in service to connect when downloaded. (same <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC" ><span>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC</span></a>), but because app will now be installed, link will be opened by app.</li>
-<li>Terms and conditions (anchor link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>)</li>
-<li>Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>)</li>
-<li>A footer with copyright, etc</li>
+<li>[PAGE-MAIN-3-1] User MUST be redirected to hologram app if app is already installed, else website is rendered.</li>
+<li>[PAGE-MAIN-3-2] Smart App Banner SHOULD be shown, with full URL.</li>
+<li>[PAGE-MAIN-3-3] Design MUST match <a path-0="www.figma.com"path-1="design"path-2="nol5mbLWElFLcm1ThIqbHn"path-3="Hologram.zone"href="https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0" >Figma - Mobile with service</a></li>
+<li>[PAGE-MAIN-3-4] i18n text and content MUST comply with <a href="#internationalization" >internationalization</a></li>
+<li>[PAGE-MAIN-3-5] Links to download the App from one of the 3 major stores, Apple, Google, Huawei, or by downloading the apk MUST be shown.</li>
+<li>[PAGE-MAIN-3-6] Terms and conditions link, <a path-0="hologram.zone"path-1="user#terms"href="https://hologram.zone/user#terms" ><span>https://hologram.zone/user#terms</span></a>, MUST be shown</li>
+<li>[PAGE-MAIN-3-7] Privacy policy (anchor link, <a path-0="hologram.zone"path-1="user#privacy"href="https://hologram.zone/user#privacy" ><span>https://hologram.zone/user#privacy</span></a>), MUST be shown</li>
+<li>[PAGE-MAIN-3-8] A footer with copyrights, <a href="#footer-links" >Footer links</a>, etc, MUST be shown</li>
+<li>[PAGE-MAIN-3-9] If user install app and click “refresh” in the hidden service zone, it reload the page and send user to hologram if app installed [PAGE-MAIN-3-1]</li>
+<li>[PAGE-MAIN-3-10] service icon and name MUST be rendered as explained in <a href="#getting-service-name-and-icon" >Getting service name and icon</a>.</li>
 </ul>
+<p>Illustration:</p>
 <p><img src="mobile-service.png" alt="mobile service"></p>
-<h3 id="case-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet"><a class="toc-anchor" href="#case-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet" >§</a> Case #4: User arrives with a DTS invitation in URL, desktop or tablet</h3>
+<h3 id="page-main-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet"><a class="toc-anchor" href="#page-main-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet" >§</a> [PAGE-MAIN-4] User arrives with a DTS invitation in URL, desktop or tablet</h3>
 <p>User was directed to <a path-0="hologram.zone"path-1=""href="https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC" ><span>https://hologram.zone/?oob=QIUiudggiUQ..&amp;tp=ABC</span></a></p>
 <p>The website MUST show:</p>
 <ul>
@@ -165,7 +191,20 @@ We have 4 notable cases.</p>
 <li>A footer with copyright, etc</li>
 </ul>
 <p><img src="./desktopandservice.png" alt="desktopandservice"></p>
-<h3 id="getting-service-name-and-icon"><a class="toc-anchor" href="#getting-service-name-and-icon" >§</a> Getting service name and icon</h3>
+<h3 id="page-tyc-terms-and-conditions-and-privacy-policy"><a class="toc-anchor" href="#page-tyc-terms-and-conditions-and-privacy-policy" >§</a> [PAGE-TYC] Terms and Conditions and Privacy Policy.</h3>
+<ul>
+<li>[PAGE-TYC-1] Smart App Banner SHOULD be shown, with full URL.</li>
+<li>[PAGE-TYC-2] If user clicked the terms and conditions or privacy policy link, parameters that where present in main page URL MUST be propagated.</li>
+<li>[PAGE-TYC-3] Design MUST match <a path-0="www.figma.com"path-1="design"path-2="nol5mbLWElFLcm1ThIqbHn"path-3="Hologram.zone"href="https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0" >Figma - TyC</a></li>
+<li>[PAGE-TYC-4] i18n text and content MUST comply with <a href="#internationalization" >internationalization</a></li>
+<li>[PAGE-TYC-5] Home button MUST send user to / including the propagated parameters that were received, such as _oob or tp</li>
+</ul>
+<p>Sample Content (in english):</p>
+<ul>
+<li><a path-0="tyc.md"href="./tyc.md" >Terms and Conditions</a></li>
+<li><a path-0="pp.md"href="./pp.md" >Privacy Policy</a></li>
+</ul>
+<h2 id="getting-service-name-and-icon"><a class="toc-anchor" href="#getting-service-name-and-icon" >§</a> Getting service name and icon</h2>
 <p>To be able to render the service name and icon, we MUST try to get the <code>label</code> and <code>imageUrl</code> attributes in the <code>oob</code> or <code>_oob</code> parameter. First, we need to decode its base64.</p>
 <p>Example:</p>
 <pre><code>eyJAdHlwZSI6Imh0dHBzOi8vZGlkY29tbS5vcmcvb3V0LW9mLWJhbmQvMS4xL2ludml0YXRpb24iLCJAaWQiOiJkOWRlMTU5Yy0zNTk5LTQ5ZDAtOGQ0Zi0zZjY5NTAzYzc3MjMiLCJsYWJlbCI6IkRlbW8gQ2hhdGJvdCBBZ2VudCIsImFjY2VwdCI6WyJkaWRjb21tL2FpcDEiLCJkaWRjb21tL2FpcDI7ZW52PXJmYzE5Il0sImhhbmRzaGFrZV9wcm90b2NvbHMiOlsiaHR0cHM6Ly9kaWRjb21tLm9yZy9kaWRleGNoYW5nZS8xLjEiLCJodHRwczovL2RpZGNvbW0ub3JnL2Nvbm5lY3Rpb25zLzEuMCJdLCJzZXJ2aWNlcyI6WyJkaWQ6d2ViOmNoYXRib3QtZGVtby5kZXYuMjA2MC5pbyJdLCJpbWFnZVVybCI6Imh0dHBzOi8vZC5jaGF0Ym90LWRlbW8uZGV2LjIwNjAuaW8vYXZhdGFyLnBuZyJ9
@@ -199,9 +238,6 @@ We have 4 notable cases.</p>
 <p>At the moment, the page MUST just show the link to connect, saying “continue to service”, as name and imageUrl cannot be extracted.</p>
 <h4 id="show-found-information-on-screen"><a class="toc-anchor" href="#show-found-information-on-screen" >§</a> Show found information on screen</h4>
 <p>Based on the information it was possible to get, the maximum possible info MUST be shown.</p>
-<h2 id="terms-conditions-privacy-policy"><a class="toc-anchor" href="#terms-conditions-privacy-policy" >§</a> Terms &amp; conditions, Privacy Policy</h2>
-<p>All in the same page. MUST be compatible with internationalization below.
-Content (in english) <a href="" >here</a>.</p>
 <h2 id="internationalization"><a class="toc-anchor" href="#internationalization" >§</a> Internationalization</h2>
 <p>Website MUST detect browser’s language and render the website in the language of the browser if possible, else MUST fallback to english.</p>
 <p>Texts and other internationalizable elements MUST be in a directory/files organized by language so that anyone can fork the project or create a branch and add a new language.</p>
@@ -271,26 +307,28 @@ Content (in english) <a href="" >here</a>.</p>
 </li>
 <li><a href="#logic" >Logic</a>
 <ul>
+<li><a href="#about-smart-app-banner" >About Smart App Banner</a></li>
 <li><a href="#hologram-app-is-already-installed-on-users-handset" >Hologram app is already installed on user’s handset</a></li>
 <li><a href="#hologram-app-is-not-installed-on-users-handset" >Hologram app is not installed on user’s handset</a></li>
 </ul>
 </li>
 <li><a href="#pages" >Pages</a>
 <ul>
-<li><a href="#case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone" >Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone</a></li>
-<li><a href="#case-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet" >Case #2: when user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet</a></li>
-<li><a href="#case-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone" >Case #3: User arrives with a DTS invitation in URL, from a mobile phone</a></li>
-<li><a href="#case-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet" >Case #4: User arrives with a DTS invitation in URL, desktop or tablet</a></li>
+<li><a href="#page-main-1-case-1-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-mobile-phone" >[PAGE-MAIN-1] Case #1: when user arrive spontaneously in website (no DTS invitation in URL), mobile phone</a></li>
+<li><a href="#page-main-2-when-user-arrive-spontaneously-in-website-no-dts-invitation-in-url-desktop-or-tablet" >[PAGE-MAIN-2] When user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet</a></li>
+<li><a href="#page-main-3-user-arrives-with-a-dts-invitation-in-url-from-a-mobile-phone" >[PAGE-MAIN-3] User arrives with a DTS invitation in URL, from a mobile phone</a></li>
+<li><a href="#page-main-4-user-arrives-with-a-dts-invitation-in-url-desktop-or-tablet" >[PAGE-MAIN-4] User arrives with a DTS invitation in URL, desktop or tablet</a></li>
+<li><a href="#page-tyc-terms-and-conditions-and-privacy-policy" >[PAGE-TYC] Terms and Conditions and Privacy Policy.</a></li>
+</ul>
+</li>
 <li><a href="#getting-service-name-and-icon" >Getting service name and icon</a>
+*
 <ul>
 <li><a href="#if-oob-message-has-typehttpsdidcommorgout-of-band11invitation-attribute" >If oob message has “@type”:“https://didcomm.org/out-of-band/1.1/invitation” attribute</a></li>
 <li><a href="#if-oob-message-has-type-httpsdidcommorgout-of-band20invitation-attribute" >If oob message has “type”: “https://didcomm.org/out-of-band/2.0/invitation” attribute</a></li>
 <li><a href="#show-found-information-on-screen" >Show found information on screen</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#terms-conditions-privacy-policy" >Terms &amp; conditions, Privacy Policy</a></li>
 <li><a href="#internationalization" >Internationalization</a></li>
 <li><a href="#design" >Design</a></li>
 <li><a href="#repo-packaging-and-deployment" >Repo, packaging and deployment</a></li>
