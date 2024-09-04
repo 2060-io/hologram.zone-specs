@@ -210,7 +210,9 @@ User was directed to https://hologram.zone/.
 
 Illustration:
 
-![Mobile direct](mobile-direct.png)
+![alt text](mobile-without.png)
+
+[figma](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=nKBtujzVK6X9MUVw-0)
 
 ### [PAGE-MAIN-2] When user arrive spontaneously in website (no DTS invitation in URL), desktop or tablet
 
@@ -218,13 +220,17 @@ User was directed to https://hologram.zone/.
 
 The website MUST show:
 
-- A **short** explanation of what is Hologram
-- A QR code of this URL, with a text "Continue on your Mobile Phone"
-- Terms and conditions (anchor link, https://hologram.zone/user#terms)
-- Privacy policy (anchor link, https://hologram.zone/user#privacy)
-- A footer with copyright, etc
+- [PAGE-MAIN-2-1] Design MUST match [Figma - Desktop 25](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0)
+- [PAGE-MAIN-2-2] i18n text and content MUST comply with [internationalization](#internationalization)
+- [PAGE-MAIN-2-3] Links to download the App from one of the 3 major stores, Apple, Google, Huawei.
+- [PAGE-MAIN-2-4] Terms and conditions link, https://hologram.zone/user#terms, MUST be shown
+- [PAGE-MAIN-2-5] Privacy policy (anchor link, https://hologram.zone/user#privacy), MUST be shown
+- [PAGE-MAIN-2-6] A footer with copyrights, [Footer links](#footer-links), etc, MUST be shown
 
-![desktopnoservice](./desktopnoservice.png)
+![alt text](desktop-25.png)
+
+[figma](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=nKBtujzVK6X9MUVw-0)
+
 
 ### [PAGE-MAIN-3] User arrives with a DTS invitation in URL, from a mobile phone
 
@@ -243,21 +249,25 @@ User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 
 Illustration:
 
-![mobile service](mobile-service.png)
+![alt text](mobile-with.png)
+
+[figma](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=nKBtujzVK6X9MUVw-0)
+
 
 ### [PAGE-MAIN-4] User arrives with a DTS invitation in URL, desktop or tablet
 
 User was directed to https://hologram.zone/?oob=QIUiudggiUQ..&tp=ABC
 
-The website MUST show:
+- [PAGE-MAIN-4-1] Design MUST match [Figma - Desktop 23](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=BN07zhJPXpJ9IJ0c-0)
+- [PAGE-MAIN-4-2] i18n text and content MUST comply with [internationalization](#internationalization)
+- [PAGE-MAIN-4-3] Links to download the App from one of the 3 major stores, Apple, Google, Huawei.
+- [PAGE-MAIN-4-4] Terms and conditions link, https://hologram.zone/user#terms, MUST be shown
+- [PAGE-MAIN-4-5] Privacy policy (anchor link, https://hologram.zone/user#privacy), MUST be shown
+- [PAGE-MAIN-4-6] A footer with copyrights, [Footer links](#footer-links), etc, MUST be shown
 
-- A **short** explanation of what is Hologram
-- A QR code of this URL, with a text "Continue on your Mobile Phone"
-- Terms and conditions (anchor link, https://hologram.zone/user#terms)
-- Privacy policy (anchor link, https://hologram.zone/user#privacy)
-- A footer with copyright, etc
+![alt text](desktop-23.png)
 
-![desktopandservice](./desktopandservice.png)
+[figma](https://www.figma.com/design/nol5mbLWElFLcm1ThIqbHn/Hologram.zone?node-id=0-1&node-type=CANVAS&t=nKBtujzVK6X9MUVw-0)
 
 ### [PAGE-TYC] Terms and Conditions and Privacy Policy.
 
